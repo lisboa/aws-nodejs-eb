@@ -13,6 +13,9 @@ app.set('view engine', 'pug')
 app.set('views', __dirname + '/views')
 app.use(bodyParser.urlencoded({extended:false}))
 
+console.log(`__dirname = ${__dirname}`)
+app.use(express.static(__dirname));
+
 app.get('/', function (req, res) {
   res.render('index', {
     title: 'BackSpace Academy & Elastic Beanstalk'
